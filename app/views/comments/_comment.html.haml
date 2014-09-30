@@ -1,0 +1,5 @@
+%div{class: comment.stale?(current_user) ? 'blue_comment' : 'green_comment'}
+  .created_at
+    = comment.created_at.to_s(:short)
+  = link_to comment.user, user_path(comment.user)
+  = emojify comment.description

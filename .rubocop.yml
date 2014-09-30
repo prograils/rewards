@@ -1,0 +1,28 @@
+AllCops:
+  Exclude:
+    - bin/*
+    - config/**/*
+    - coverage/**/*
+    - db/**/*
+    - doc/**/*
+    - log/**/*
+    - public/**/*
+    - script/**/*
+    - tmp/**/*
+    - vendor/**/*
+  RunRailsCops: true
+
+MethodCalledOnDoEndBlock:
+  Enabled: true
+
+Documentation:
+  Exclude:
+    - app/api/**/*
+    - app/controllers/**/*
+    - app/helpers/**/*
+
+ClassAndModuleChildren:
+  Enabled: false
+
+Style/DotPosition:
+  EnforcedStyle: trailing

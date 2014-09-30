@@ -1,0 +1,5 @@
+= simple_form_for [reward, reward.comments.build] do |f|
+  = f.error_notification
+
+  = f.input :description, label: "Your comment"
+  = f.button :button, value: "Save comment", class: reward.is_archived? ? "btn btn-sm btn" : reward.stale?(current_user) ? "btn btn-sm btn-info" : "btn btn-sm btn-success"

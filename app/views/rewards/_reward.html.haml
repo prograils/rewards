@@ -1,0 +1,14 @@
+%div{class: reward.is_archived? ? 'grey_reward' : (reward.stale?(current_user) ? 'blue_reward' : 'green_reward')}
+  .created_at
+    = reward.created_at.to_s(:short)
+  .description
+    = link_to reward.giver, user_path(reward.giver)
+    .glyphicon.glyphicon-arrow-right
+    = link_to reward.recipient, user_path(reward.recipient)
+    .border
+      = emojify reward.description
+      .points
+        = reward.value_with_unit
+    - reward.comments.each do |comment|
+      = render comment
+    = render partial: 'comments/form', locals: {reward: reward}

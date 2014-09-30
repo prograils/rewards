@@ -1,0 +1,13 @@
+%h3
+  You got a new reward
+%p
+  from
+  = link_to @reward.giver, user_url(@reward.giver)
+%class{style: "background-color: #4dd366; border-radius: 5px; width: 425px; padding: 5px; margin-bottom: 5px; overflow: hidden;"}
+
+  = @reward.description
+%p
+  value:
+  = @reward.value_with_unit
+%h5
+  = link_to 'See more', root_url

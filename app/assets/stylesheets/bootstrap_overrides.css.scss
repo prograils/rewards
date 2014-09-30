@@ -1,0 +1,108 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar-left > li > a {
+  padding: 6px;
+}
+.navbar {
+  background-color: #023a84;
+}
+body {
+  padding: 100px;
+}
+label {
+  width: 120px;
+}
+#edit_user label,
+#new_user label {
+  width: 200px;
+}
+input {
+  width: 200px;
+}
+input.boolean {
+  width: 30px;
+}
+.top-container {
+  padding: 0 20px;
+  h3 {
+    margin-top: 15px;
+  }
+}
+.created_at {
+  width: 100px;
+  display: inline-block;
+  float: left;
+}
+.description {
+  margin-left: 100px;
+  padding-bottom: 15px;
+  .border {
+    border-radius: 5px;
+    width: 425px;
+    padding: 5px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    .points {
+      display: inline-block;
+      float: right;
+      padding-left: 5px;
+    }
+  }
+}
+.blue_reward {
+  .border {
+    background-color: #87d1e5;
+  }
+  .green_comment {
+    a {
+      color: #4db666;
+    }
+  }
+}
+.green_reward {
+  .border {
+    background-color: #4dd366;
+  }
+  a {
+    color: #4db666;
+  }
+}
+.grey_reward {
+  .border {
+    background-color: #aaaaaa;
+  }
+  a {
+    color: #888888;
+  }
+}
+.alert {
+  background-color: #5BC0DE;
+}
+.right_corner {
+  float: right;
+  width: 160px;
+}
+.user_box {
+  width: 200px;
+  height: 100px;
+  background-color: #5BC0DE;
+  margin: 20px;
+  padding: 20px;
+  display: inline-block;
+  a {
+    color: white;
+  }
+}
+.comment_description {
+  display: inline-block;
+  input {
+    height: 27px;
+  }
+}
+#new_comment button {
+  padding: 3px;
+}
+.filter_users {
+  margin-left: 20px;
+}

@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %meta{charset: "utf-8"}
+    %title Reward Them
+    = stylesheet_link_tag "application", media: "all", data: {turbolinks_track: true}
+    = javascript_include_tag "application", data: {turbolinks_track: true}
+    = csrf_meta_tags
+  %body{class: params[:controller].gsub(/\//, '_')}
+    %header.navbar.navbar-fixed-top
+      = render 'layouts/top_container'
+    - flash.each do |key, value|
+      .alert
+        %a.close{href: "#", data: {dismiss: "alert"}} ×
+        = value
+    - if current_user and current_user.is_active?
+      .right_corner
+        You can give #{current_user.money_left} points
+        You received #{current_user.received_sum} points
+    #main{class: params[:action]}
+      = yield

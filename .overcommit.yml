@@ -1,0 +1,3 @@
+PreCommit:
+  Rubocop:
+    enabled: true

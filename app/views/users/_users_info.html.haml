@@ -1,0 +1,12 @@
+.users_info
+  - User.all.each do |u|
+    .user_box
+      = link_to u, user_path(u)
+      %br/
+      Received
+      %span.received_sum
+        = u.received_sum(@month, @year)
+      %br/
+      Gave
+      %span.spent_sum
+        = u.spent_sum(@month, @year)

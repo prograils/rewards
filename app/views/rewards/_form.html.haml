@@ -1,0 +1,12 @@
+%h3
+  Create new reward
+= simple_form_for @reward do |f|
+  %br/
+  = f.error_notification
+
+  .form-inputs
+    = f.input :description, label: "Reason"
+    = f.input :value
+    = f.association :recipient, collection: User.active.where.not(id: current_user.id).map{ |r| [r.to_s, r.id] }
+  .form-actions
+    = f.button :button, value: "Save reward", class: "btn btn-sm btn-info"

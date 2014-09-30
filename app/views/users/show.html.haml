@@ -1,0 +1,45 @@
+%h1
+  = @user
+can give #{@user.money_left} points
+%br/
+received #{@user.received_sum} points
+- if @given_rewards.any?
+  %h3
+    Recently gave rewards
+  %table.table
+    = search_form_for @r do |f|
+      %tr
+        %th{width: 150}= sort_link @r, :created_at, "Date"
+        %th{width: 250}= sort_link @r, :user, "Gave to"
+        %th{width: 100}= sort_link @r, :value, "Value"
+        %th= sort_link @r, :description, "Reason"
+      - @given_rewards.each do |reward|
+        %tr
+          %td= reward.created_at.to_s(:short)
+          %td= link_to reward.recipient, user_path(reward.recipient)
+          %td= reward.value_with_unit
+          %td= reward.description
+- if @received_rewards.any?
+  %h3
+    Recently received rewards
+  %table.table
+    = search_form_for @g do |f|
+      %tr
+        %th{width: 150}= sort_link @g, :created_at, "Date"
+        %th{width: 250}= sort_link @g, :user, "Received from"
+        %th{width: 100}= sort_link @g, :value, "Value"
+        %th= sort_link @g, :description, "Reason"
+      - @received_rewards.each do |reward|
+        %tr
+          %td= reward.created_at.to_s(:short)
+          %td= link_to reward.giver, user_path(reward.giver)
+          %td= reward.value_with_unit
+          %td= reward.description
+- if @comments.any?
+  %h3
+    Recently commented
+  - @comments.each do |comment|
+    .created_at
+      = comment.created_at.to_s(:short)
+    = link_to comment.description, reward_path(comment.reward)
+    %br/

@@ -1,0 +1,7 @@
+%span{style: "float: right; position:relative"}
+  = Time.now.strftime("%D")
+%h3
+  = @subject
+- @users.each do |user|
+  %p
+    = "#{user}: #{user.received_sum(@month, @year)}"

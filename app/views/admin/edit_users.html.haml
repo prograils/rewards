@@ -1,0 +1,6 @@
+= semantic_form_for :user, url: update_users_path do |f|
+  - @users.each do |user|
+    = f.hidden_field :ids, multiple: true, value: user.id
+  = f.inputs do
+    = f.input :limit, as: :number
+  = f.submit 'Submit'

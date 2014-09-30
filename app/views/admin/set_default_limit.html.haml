@@ -1,0 +1,4 @@
+= semantic_form_for :user, url: set_default_limit_path do |f|
+  = f.inputs do
+    = f.input :default_limit, as: :number, input_html: {value: "#{Setting.default_limit}"}
+  = f.submit 'Submit'

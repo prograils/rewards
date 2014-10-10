@@ -1,6 +1,6 @@
-namespace :rewardthem do
-  desc 'Generate raport for previous month and archive rewards'
-  task close_previous_month: :environment do |t, args|
+desc 'Generate raport for previous month and archive rewards'
+task close_previous_month: :environment do |t, args|
+  if Date.current.day == 1
     after_end_date = Time.new(Time.now.year, Time.now.month, 1, 0, 0)
     start_date = after_end_date - 1.month
     AdminNotifier.report(start_date.month, start_date.year).deliver

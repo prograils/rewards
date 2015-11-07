@@ -11,9 +11,21 @@ class RewardsController < ApplicationController
   def create
     @reward = current_user.given_rewards.create(reward_params)
     if @reward.persisted?
-      redirect_to root_path
+      respond_to do |format|
+        format.html do
+          redirect_to root_path
+        end
+        format.json
+        format.js
+      end
     else
-      render action: 'new'
+      respond_to do |format|
+        format.html do
+          render action: 'new'
+        end
+        format.json
+        format.js
+      end
     end
   end
 

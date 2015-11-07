@@ -7,6 +7,8 @@ gem 'rails', '4.2.4'
 
 gem 'pg'
 
+gem 'therubyracer'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 
@@ -40,6 +42,9 @@ gem 'kaminari'
 gem 'whenever'
 gem 'rails-settings-cached'
 gem 'rb-readline'
+
+# React
+gem 'react-rails', '~> 1.4.0'
 
 group :test do
   gem 'minitest-rails-capybara'

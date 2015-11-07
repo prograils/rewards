@@ -39,4 +39,6 @@ RewardsThem::Application.configure do
     port:    1025,
     domain:  'example.com'
   }
+
+  config.react.variant = :development
 end

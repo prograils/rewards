@@ -90,4 +90,6 @@ RewardsThem::Application.configure do
     authentication:        ENV['REWARDTHEM_SMTP_AUTHENTICATION'],
     enable_starttls_auto:  ENV['REWARDTHEM_SMTP_ENABLE_STARTTLS_AUTO']
   }
+
+  config.react.variant = :production
 end

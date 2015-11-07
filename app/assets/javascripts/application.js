@@ -16,3 +16,6 @@
 //= require bootstrap-sprockets
 //= require_tree ./controllers/
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require components

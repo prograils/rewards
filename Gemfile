@@ -30,7 +30,7 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-#gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 2.0'
 
 gem 'inherited_resources'
 gem 'devise'
@@ -57,6 +57,7 @@ group :development, :test do
   gem 'minitest-rails'
   gem 'factory_girl_rails'
   gem 'dotenv-rails'
+  gem 'quiet_assets'
 end
 
 group :development do

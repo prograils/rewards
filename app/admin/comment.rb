@@ -1,2 +1,2 @@
-ActiveAdmin.register Comment do
+ActiveAdmin.register Comment, as: 'RewardComment' do
 end

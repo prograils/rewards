@@ -1,8 +1,9 @@
+ruby File.read(File.expand_path('../.ruby-version', __FILE__)).chomp
 source ENV.fetch('GEM_SOURCE', 'https://rubygems.org')
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 #gem 'rails', '4.1.0'
-gem 'rails', '4.1.6'
+gem 'rails', '4.2.4'
 
 gem 'pg'
 
@@ -50,6 +51,7 @@ end
 group :development, :test do
   gem 'minitest-rails'
   gem 'factory_girl_rails'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -66,4 +68,3 @@ group :production do
 end
 
 
-ruby "2.1.2"

@@ -60,7 +60,7 @@ class User < ActiveRecord::Base
   end
 
   def send_mail_to_admins
-    AdminNotifier.new_user_notify(self).deliver
+    AdminNotifier.new_user_notify(self).deliver_now
   end
 
   def try_activating

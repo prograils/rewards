@@ -13,7 +13,7 @@ RewardsThem::Application.configure do
   config.eager_load = false
 
   # Configure static asset server for tests with Cache-Control for performance.
-  config.serve_static_assets  = true
+  config.serve_static_files  = true
   config.static_cache_control = "public, max-age=3600"
 
   # Show full error reports and disable caching.
@@ -34,10 +34,10 @@ RewardsThem::Application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
-  config.action_mailer.default_url_options = { 
+  config.action_mailer.default_url_options = {
     host: 'localhost:3000'
   }
-  config.action_mailer.default_options = { 
+  config.action_mailer.default_options = {
     from: 'me@exemple.com'
     }
   config.action_mailer.smtp_settings = {

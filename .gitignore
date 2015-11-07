@@ -21,3 +21,4 @@
 # Ignore vim artifacts
 **.swp
 **.swo
+.env

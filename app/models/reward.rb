@@ -32,7 +32,7 @@ class Reward < ActiveRecord::Base
   after_create :notify_recipient
 
   def notify_recipient
-    UserNotifier.got_new_reward(self).deliver
+    UserNotifier.got_new_reward(self).deliver_now
   end
 
   def to_s

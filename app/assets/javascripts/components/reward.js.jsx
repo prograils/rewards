@@ -8,7 +8,7 @@ class Reward extends React.Component{
   }
 
   rewardClass() {
-    klass = 'green_reward';
+    let klass = 'green_reward';
     if(this.props.reward.is_stale)
       klass = 'blue_reward';
     if(this.props.reward.is_archived)
@@ -32,6 +32,6 @@ class Reward extends React.Component{
 
         </div>
       </div>
-    )
+    );
   }
 }

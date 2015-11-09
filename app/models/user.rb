@@ -73,6 +73,10 @@ class User < ActiveRecord::Base
     self.limit = Setting.default_limit if self.new_record?
   end
 
+  def self.to_recipients_json
+    order('last_name asc').map { |u| { id: u.id, name: u.to_s } }.to_json
+  end
+
   def self.find_or_create_for_google_oauth2(access_token)
     data = access_token.info
     user = find_by_credentials(access_token.provider, access_token.uid)

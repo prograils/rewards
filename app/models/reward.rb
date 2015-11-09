@@ -58,7 +58,8 @@ class Reward < ActiveRecord::Base
   end
 
   def recipient_must_be_active
-    errors.add(:recipient, 'must be active user') unless recipient.is_active?
+    return if recipient && recipient.is_active?
+    errors.add(:recipient, 'must be active user')
   end
 
   def giver_must_be_active

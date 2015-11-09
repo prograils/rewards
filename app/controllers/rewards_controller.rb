@@ -4,8 +4,8 @@ class RewardsController < ApplicationController
   inherit_resources
 
   def index
-    @reward = current_user.given_rewards.new
     @rewards = Reward.ordered.page(params[:page])
+    @recipients = User.active.where.not(id: current_user.id).to_recipients_json
   end
 
   def create
@@ -23,7 +23,7 @@ class RewardsController < ApplicationController
         format.html do
           render action: 'new'
         end
-        format.json
+        format.json { render status: 400 }
         format.js
       end
     end

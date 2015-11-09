@@ -3,9 +3,7 @@
     %h3
       What happend recently
     = react_component 'Rewards', url: rewards_path(format: :json)
-    -#- @rewards.each do |reward|
-      -#= react_component 'Reward', is_archived: reward.is_archived?, is_stale: reward.stale?(current_user), created_at: reward.created_at.to_s(:short), giver_path: user_path(reward.giver), giver: reward.giver.to_s, recipient: reward.recipient.to_s, recipient_path: user_path(reward.recipient), description: emojify(reward.description), value: reward.value_with_unit
-      -#= render reward
   .col-lg-5.col-md-12
-    = render 'rewards/form'
-= paginate @rewards
+    %h3
+      Create new reward
+    = react_component 'NewRewardForm', url: rewards_path(format: :json), recipients: @recipients

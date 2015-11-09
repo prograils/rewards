@@ -22,3 +22,5 @@
 **.swp
 **.swo
 .env
+*.sql
+*.dump

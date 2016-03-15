@@ -2,8 +2,7 @@ ruby File.read(File.expand_path('../.ruby-version', __FILE__)).chomp
 source ENV.fetch('GEM_SOURCE', 'https://rubygems.org')
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-#gem 'rails', '4.1.0'
-gem 'rails', '4.2.4'
+gem 'rails', '4.2.6'
 
 gem 'pg'
 

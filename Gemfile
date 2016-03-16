@@ -38,7 +38,7 @@ gem 'simple_form'
 gem 'gemoji'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'kaminari'
-gem 'whenever'
+gem 'sidekiq-cron'
 gem 'rails-settings-cached'
 gem 'rb-readline'
 

@@ -1,0 +1,4 @@
+month_closer:
+  cron: "1 0 1 * *"
+  class: "MonthCloser"
+  queue: default

@@ -39,6 +39,9 @@ class User < ActiveRecord::Base
   after_initialize :assign_defaults
   after_create :send_mail_to_admins
 
+  validates :email, format: { with: /\b[A-Z0-9._%a-z\-]+@#{ ENV['EMAIL_DOMAIN'] }\z/,
+                              message: "must be a #{ENV['EMAIL_DOMAIN']} account" }
+
   def to_s
     full_name.strip.blank? ? email : full_name
   end
